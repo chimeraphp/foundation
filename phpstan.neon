@@ -1,0 +1,4 @@
+parameters:
+    ignoreErrors:
+        # Ignore PHPUnit mock stuff
+        - '#PHPUnit_Framework_MockObject_MockObject.* given#'
