@@ -5,6 +5,9 @@ namespace Lcobucci\Chimera\ReadModelConverter;
 
 use Lcobucci\Chimera\ReadModelConverter;
 
+/**
+ * A read model converter that uses a callback, if the used query object is able to provide that callback
+ */
 final class CallbackConverter implements ReadModelConverter
 {
     public function convert($query, $result)

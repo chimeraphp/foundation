@@ -6,6 +6,9 @@ namespace Lcobucci\Chimera\MessageCreator;
 use Lcobucci\Chimera\MessageCreator;
 use Psr\Http\Message\ServerRequestInterface;
 
+/**
+ * The most simple message creation strategy: named constructor in the message itself
+ */
 final class NamedConstructorCreator implements MessageCreator
 {
     private const DEFAULT_CONSTRUCTOR = 'fromRequest';
