@@ -23,11 +23,8 @@ final class NamedConstructorCreator implements MessageCreator
         $this->methodName = $methodName;
     }
 
-    public function create(
-        string $message,
-        ServerRequestInterface $request,
-        ...$extra
-    ) {
-        return call_user_func([$message, $this->methodName], $request, ...$extra);
+    public function create(string $message, ServerRequestInterface $request)
+    {
+        return call_user_func([$message, $this->methodName], $request);
     }
 }

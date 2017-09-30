@@ -15,11 +15,6 @@ interface CommandBus
      *
      * @param string                 $command  The class name of the message to be created
      * @param ServerRequestInterface $request  The HTTP request
-     * @param mixed                  ...$extra Extra arguments (e.g.: id to be used to create an object)
      */
-    public function handle(
-        string $command,
-        ServerRequestInterface $request,
-        ...$extra
-    ): void;
+    public function handle(string $command, ServerRequestInterface $request): void;
 }

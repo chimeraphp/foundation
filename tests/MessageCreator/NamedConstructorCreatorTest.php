@@ -17,30 +17,14 @@ final class NamedConstructorCreatorTest extends \PHPUnit\Framework\TestCase
      */
     public function createShouldUseDefaultCallbackToCreateTheMessageWhenNothingIsProvided(): void
     {
-        $creator = new NamedConstructorCreator();
-        $request = $this->createMock(ServerRequestInterface::class);
-
-        $message = $creator->create(DoStuff::class, $request);
-
-        self::assertInstanceOf(DoStuff::class, $message);
-        self::assertSame($request, $message->request);
-        self::assertSame([], $message->extra);
-    }
-
-    /**
-     * @test
-     *
-     * @covers \Lcobucci\Chimera\MessageCreator\NamedConstructorCreator
-     *
-     * @uses \Lcobucci\Chimera\Tests\MessageCreator\DoStuff
-     */
-    public function createShouldSendAnyExtraArgumentsToConstructor(): void
-    {
-        $creator = new NamedConstructorCreator();
-        $request = $this->createMock(ServerRequestInterface::class);
         $id      = uniqid();
+        $request = $this->createMock(ServerRequestInterface::class);
 
-        $message = $creator->create(DoStuff::class, $request, $id);
+        $request->method('getAttribute')
+                ->willReturn($id);
+
+        $creator = new NamedConstructorCreator();
+        $message = $creator->create(DoStuff::class, $request);
 
         self::assertInstanceOf(DoStuff::class, $message);
         self::assertSame($request, $message->request);
@@ -56,9 +40,9 @@ final class NamedConstructorCreatorTest extends \PHPUnit\Framework\TestCase
      */
     public function createShouldUseACustomisedConstructorWhenItWasConfigured(): void
     {
-        $creator = new NamedConstructorCreator('aCustomName');
         $request = $this->createMock(ServerRequestInterface::class);
 
+        $creator = new NamedConstructorCreator('aCustomName');
         $message = $creator->create(DoStuff::class, $request);
 
         self::assertInstanceOf(DoStuff::class, $message);

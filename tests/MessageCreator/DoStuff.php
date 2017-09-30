@@ -23,15 +23,20 @@ final class DoStuff
         $this->extra   = $extra;
     }
 
-    public static function fromRequest(ServerRequestInterface $request, ...$extra): self
+    public static function fromRequest(ServerRequestInterface $request): self
     {
+        $id    = $request->getAttribute('createdId');
+        $extra = [];
+
+        if ($id !== null) {
+            $extra[] = $id;
+        }
+
         return new self($request, $extra);
     }
 
-    public static function aCustomName(ServerRequestInterface $request, ...$extra): self
+    public static function aCustomName(ServerRequestInterface $request): self
     {
-        array_unshift($extra, 'testing');
-
-        return new self($request, $extra);
+        return new self($request, ['testing']);
     }
 }

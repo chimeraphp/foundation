@@ -15,13 +15,8 @@ interface QueryBus
      *
      * @param string                 $query    The class name of the message to be created
      * @param ServerRequestInterface $request  The HTTP request
-     * @param mixed                  ...$extra Extra arguments (e.g.: id to be used to create an object)
      *
      * @return mixed
      */
-    public function handle(
-        string $query,
-        ServerRequestInterface $request,
-        ...$extra
-    );
+    public function handle(string $query, ServerRequestInterface $request);
 }
