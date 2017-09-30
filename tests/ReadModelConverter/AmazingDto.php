@@ -17,7 +17,7 @@ final class AmazingDto implements \JsonSerializable
 
     private function __construct(int $id, string $name)
     {
-        $this->id = $id;
+        $this->id   = $id;
         $this->name = $name;
     }
 
