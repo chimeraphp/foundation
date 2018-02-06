@@ -11,10 +11,9 @@ interface ReadModelConverter
     /**
      * Converts a domain object (or a list of objects) to a read model
      *
-     * @param object            $query
-     * @param object|array|null $result
+     * @param object|mixed[]|null $result
      *
-     * @return object|array|null
+     * @return object|mixed[]|null
      */
-    public function convert($query, $result);
+    public function convert(object $query, $result);
 }

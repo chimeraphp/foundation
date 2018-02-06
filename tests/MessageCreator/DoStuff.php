@@ -13,10 +13,13 @@ final class DoStuff
     public $request;
 
     /**
-     * @var array
+     * @var string[]
      */
     public $extra;
 
+    /**
+     * @param string[] $extra
+     */
     private function __construct(ServerRequestInterface $request, array $extra)
     {
         $this->request = $request;
@@ -25,6 +28,7 @@ final class DoStuff
 
     public static function fromRequest(ServerRequestInterface $request): self
     {
+        /** @var string|null $id */
         $id    = $request->getAttribute('createdId');
         $extra = [];
 

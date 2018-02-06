@@ -13,8 +13,8 @@ interface CommandBus
     /**
      * Creates a command object and processes it
      *
-     * @param string                 $command  The class name of the message to be created
-     * @param ServerRequestInterface $request  The HTTP request
+     * @param string                 $command The class name of the message to be created
+     * @param ServerRequestInterface $request The HTTP request
      */
     public function handle(string $command, ServerRequestInterface $request): void;
 }

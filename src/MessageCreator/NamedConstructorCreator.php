@@ -5,6 +5,7 @@ namespace Lcobucci\Chimera\MessageCreator;
 
 use Lcobucci\Chimera\MessageCreator;
 use Psr\Http\Message\ServerRequestInterface;
+use function call_user_func;
 
 /**
  * The most simple message creation strategy: named constructor in the message itself
@@ -23,7 +24,7 @@ final class NamedConstructorCreator implements MessageCreator
         $this->methodName = $methodName;
     }
 
-    public function create(string $message, ServerRequestInterface $request)
+    public function create(string $message, ServerRequestInterface $request): object
     {
         return call_user_func([$message, $this->methodName], $request);
     }
