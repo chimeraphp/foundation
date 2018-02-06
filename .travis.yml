@@ -3,7 +3,6 @@ sudo: false
 language: php
 
 php:
-  - 7.1
   - 7.2
   - nightly
 
@@ -25,7 +24,8 @@ jobs:
     - php: nightly
 
   include:
-    - stage: Coverage
+    - stage: Code Quality
+      env: TEST_COVERAGE=1
       before_script:
         - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{.disabled,}
         - if [[ ! $(php -m | grep -si xdebug) ]]; then echo "xdebug required for coverage"; exit 1; fi
@@ -35,10 +35,20 @@ jobs:
         - wget https://scrutinizer-ci.com/ocular.phar
         - php ocular.phar code-coverage:upload --format=php-clover ./clover.xml
 
-    - stage: Code standard
+    - stage: Code Quality
+      env: CODE_STANDARD=1
       script:
         - ./vendor/bin/phpcs
 
-    - stage: Static Analysis
+    - stage: Code Quality
+      env: STATIC_ANALYSIS=1
       script:
         - ./vendor/bin/phpstan analyse -c phpstan.neon -l max src tests
+
+    - stage: Code Quality
+      env: MUTATION_TESTS=1
+      before_script:
+        - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{.disabled,}
+        - if [[ ! $(php -m | grep -si xdebug) ]]; then echo "xdebug required for mutation tests"; exit 1; fi
+      script:
+        - ./vendor/bin/infection --threads=4 --min-msi=100 --min-covered-msi=100
