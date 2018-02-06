@@ -13,8 +13,8 @@ interface QueryBus
     /**
      * Creates a command object, processes it, and returns the result of the operation
      *
-     * @param string                 $query    The class name of the message to be created
-     * @param ServerRequestInterface $request  The HTTP request
+     * @param string                 $query   The class name of the message to be created
+     * @param ServerRequestInterface $request The HTTP request
      *
      * @return mixed
      */

@@ -4,9 +4,11 @@ declare(strict_types=1);
 namespace Lcobucci\Chimera\Tests\MessageCreator;
 
 use Lcobucci\Chimera\MessageCreator\NamedConstructorCreator;
+use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
+use function uniqid;
 
-final class NamedConstructorCreatorTest extends \PHPUnit\Framework\TestCase
+final class NamedConstructorCreatorTest extends TestCase
 {
     /**
      * @test
@@ -24,6 +26,8 @@ final class NamedConstructorCreatorTest extends \PHPUnit\Framework\TestCase
                 ->willReturn($id);
 
         $creator = new NamedConstructorCreator();
+
+        /** @var DoStuff $message */
         $message = $creator->create(DoStuff::class, $request);
 
         self::assertInstanceOf(DoStuff::class, $message);
@@ -41,8 +45,9 @@ final class NamedConstructorCreatorTest extends \PHPUnit\Framework\TestCase
     public function createShouldUseACustomisedConstructorWhenItWasConfigured(): void
     {
         $request = $this->createMock(ServerRequestInterface::class);
-
         $creator = new NamedConstructorCreator('aCustomName');
+
+        /** @var DoStuff $message */
         $message = $creator->create(DoStuff::class, $request);
 
         self::assertInstanceOf(DoStuff::class, $message);

@@ -26,7 +26,10 @@ final class AmazingDto implements \JsonSerializable
         return new self($object->id(), $object->name());
     }
 
-    public function jsonSerialize()
+    /**
+     * @return mixed[]
+     */
+    public function jsonSerialize(): array
     {
         return [
             'id'   => $this->id,

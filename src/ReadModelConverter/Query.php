@@ -11,7 +11,6 @@ interface Query
     /**
      * Retrieves the callback function to be used to convert domain objects into read models
      *
-     * @return callable
      */
     public function conversionCallback(): callable;
 }

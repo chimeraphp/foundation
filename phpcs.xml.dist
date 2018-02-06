@@ -10,22 +10,19 @@
     <file>src</file>
     <file>tests</file>
 
-    <rule ref="PSR2"/>
+    <rule ref="Doctrine" />
 
-    <rule ref="Generic.Formatting.MultipleStatementAlignment">
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
         <properties>
-            <property name="error" value="true"/>
+            <property name="newlinesCountBetweenOpenTagAndDeclare" value="1"/>
+            <property name="spacesCountAroundEqualsSign" value="0"/>
+            <property name="newlinesCountAfterDeclare" value="2"/>
         </properties>
     </rule>
 
-    <rule ref="Generic.Formatting.SpaceAfterCast" />
-    <rule ref="Generic.Formatting.SpaceAfterNot" />
-    <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
-
-    <rule ref="Squiz.Strings.ConcatenationSpacing">
+    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing">
         <properties>
-            <property name="spacing" value="1"/>
-            <property name="ignoreNewlines" value="true"/>
+            <property name="spacesCountBeforeColon" value="0"/>
         </properties>
     </rule>
 </ruleset>

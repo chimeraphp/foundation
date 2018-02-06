@@ -13,10 +13,8 @@ interface MessageCreator
     /**
      * Creates a message from an HTTP request and extra parameters
      *
-     * @param string                 $message  The class name of the message to be created
-     * @param ServerRequestInterface $request  The HTTP request
-     *
-     * @return object
+     * @param string                 $message The class name of the message to be created
+     * @param ServerRequestInterface $request The HTTP request
      */
-    public function create(string $message, ServerRequestInterface $request);
+    public function create(string $message, ServerRequestInterface $request): object;
 }

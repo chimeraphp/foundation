@@ -4,8 +4,9 @@ declare(strict_types=1);
 namespace Lcobucci\Chimera\Tests\ReadModelConverter;
 
 use Lcobucci\Chimera\ReadModelConverter\CallbackConverter;
+use PHPUnit\Framework\TestCase;
 
-final class CallbackConverterTest extends \PHPUnit\Framework\TestCase
+final class CallbackConverterTest extends TestCase
 {
     /**
      * @test
