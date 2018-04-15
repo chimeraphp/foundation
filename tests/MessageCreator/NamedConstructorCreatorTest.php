@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Lcobucci\Chimera\Tests\MessageCreator;
 
+use Lcobucci\Chimera\Input;
 use Lcobucci\Chimera\MessageCreator\NamedConstructorCreator;
 use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\ServerRequestInterface;
 use function uniqid;
 
 final class NamedConstructorCreatorTest extends TestCase
@@ -19,18 +19,17 @@ final class NamedConstructorCreatorTest extends TestCase
      */
     public function createShouldUseDefaultCallbackToCreateTheMessageWhenNothingIsProvided(): void
     {
-        $id      = uniqid();
-        $request = $this->createMock(ServerRequestInterface::class);
+        $id    = uniqid('testing', true);
+        $input = $this->createMock(Input::class);
 
-        $request->method('getAttribute')
-                ->willReturn($id);
+        $input->method('getAttribute')
+              ->willReturn($id);
 
         $creator = new NamedConstructorCreator();
-
-        $message = $creator->create(DoStuff::class, $request);
+        $message = $creator->create(DoStuff::class, $input);
 
         self::assertInstanceOf(DoStuff::class, $message);
-        self::assertSame($request, $message->request);
+        self::assertSame($input, $message->request);
         self::assertSame([$id], $message->extra);
     }
 
@@ -43,13 +42,13 @@ final class NamedConstructorCreatorTest extends TestCase
      */
     public function createShouldUseACustomisedConstructorWhenItWasConfigured(): void
     {
-        $request = $this->createMock(ServerRequestInterface::class);
-        $creator = new NamedConstructorCreator('aCustomName');
+        $input = $this->createMock(Input::class);
 
-        $message = $creator->create(DoStuff::class, $request);
+        $creator = new NamedConstructorCreator('aCustomName');
+        $message = $creator->create(DoStuff::class, $input);
 
         self::assertInstanceOf(DoStuff::class, $message);
-        self::assertSame($request, $message->request);
+        self::assertSame($input, $message->request);
         self::assertSame(['testing'], $message->extra);
     }
 }

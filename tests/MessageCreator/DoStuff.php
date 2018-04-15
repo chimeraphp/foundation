@@ -3,12 +3,14 @@ declare(strict_types=1);
 
 namespace Lcobucci\Chimera\Tests\MessageCreator;
 
-use Psr\Http\Message\ServerRequestInterface;
+use Lcobucci\Chimera\Input;
+use function assert;
+use function is_string;
 
 final class DoStuff
 {
     /**
-     * @var ServerRequestInterface
+     * @var Input
      */
     public $request;
 
@@ -20,27 +22,28 @@ final class DoStuff
     /**
      * @param string[] $extra
      */
-    private function __construct(ServerRequestInterface $request, array $extra)
+    private function __construct(Input $request, array $extra)
     {
         $this->request = $request;
         $this->extra   = $extra;
     }
 
-    public static function fromRequest(ServerRequestInterface $request): self
+    public static function fromInput(Input $input): self
     {
-        /** @var string|null $id */
-        $id    = $request->getAttribute('createdId');
+        $id = $input->getAttribute('createdId');
+        assert(is_string($id) || $id === null);
+
         $extra = [];
 
         if ($id !== null) {
             $extra[] = $id;
         }
 
-        return new self($request, $extra);
+        return new self($input, $extra);
     }
 
-    public static function aCustomName(ServerRequestInterface $request): self
+    public static function aCustomName(Input $input): self
     {
-        return new self($request, ['testing']);
+        return new self($input, ['testing']);
     }
 }
