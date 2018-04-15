@@ -4,16 +4,16 @@ declare(strict_types=1);
 namespace Lcobucci\Chimera\Tests\MessageCreator;
 
 use Lcobucci\Chimera\Input;
-use Lcobucci\Chimera\MessageCreator\NamedConstructorCreator;
+use Lcobucci\Chimera\MessageCreator\NamedConstructor;
 use PHPUnit\Framework\TestCase;
 use function uniqid;
 
-final class NamedConstructorCreatorTest extends TestCase
+final class NamedConstructorTest extends TestCase
 {
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\MessageCreator\NamedConstructorCreator
+     * @covers \Lcobucci\Chimera\MessageCreator\NamedConstructor
      *
      * @uses \Lcobucci\Chimera\Tests\MessageCreator\DoStuff
      */
@@ -25,7 +25,7 @@ final class NamedConstructorCreatorTest extends TestCase
         $input->method('getAttribute')
               ->willReturn($id);
 
-        $creator = new NamedConstructorCreator();
+        $creator = new NamedConstructor();
         $message = $creator->create(DoStuff::class, $input);
 
         self::assertInstanceOf(DoStuff::class, $message);
@@ -36,7 +36,7 @@ final class NamedConstructorCreatorTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\MessageCreator\NamedConstructorCreator
+     * @covers \Lcobucci\Chimera\MessageCreator\NamedConstructor
      *
      * @uses \Lcobucci\Chimera\Tests\MessageCreator\DoStuff
      */
@@ -44,7 +44,7 @@ final class NamedConstructorCreatorTest extends TestCase
     {
         $input = $this->createMock(Input::class);
 
-        $creator = new NamedConstructorCreator('aCustomName');
+        $creator = new NamedConstructor('aCustomName');
         $message = $creator->create(DoStuff::class, $input);
 
         self::assertInstanceOf(DoStuff::class, $message);

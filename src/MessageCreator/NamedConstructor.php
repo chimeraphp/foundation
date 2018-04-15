@@ -11,7 +11,7 @@ use function is_callable;
 /**
  * The most simple message creation strategy: named constructor in the message itself
  */
-final class NamedConstructorCreator implements MessageCreator
+final class NamedConstructor implements MessageCreator
 {
     private const DEFAULT_CONSTRUCTOR = 'fromInput';
 

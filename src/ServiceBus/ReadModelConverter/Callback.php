@@ -10,7 +10,7 @@ use function is_array;
 /**
  * A read model converter that uses a callback, if the used query object is able to provide that callback
  */
-final class CallbackConverter implements ReadModelConverter
+final class Callback implements ReadModelConverter
 {
     /**
      * {@inheritdoc}
