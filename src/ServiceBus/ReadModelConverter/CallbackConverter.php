@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\ReadModelConverter;
+namespace Lcobucci\Chimera\ServiceBus\ReadModelConverter;
 
-use Lcobucci\Chimera\ReadModelConverter;
+use Lcobucci\Chimera\ServiceBus\ReadModelConverter;
 use function array_map;
 use function is_array;
 
@@ -13,9 +13,7 @@ use function is_array;
 final class CallbackConverter implements ReadModelConverter
 {
     /**
-     * @param object|mixed[]|null $result
-     *
-     * @return object|mixed[]|null
+     * {@inheritdoc}
      */
     public function convert(object $query, $result)
     {
