@@ -1,24 +1,24 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\Tests\ReadModelConverter;
+namespace Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter;
 
-use Lcobucci\Chimera\ReadModelConverter\CallbackConverter;
+use Lcobucci\Chimera\ServiceBus\ReadModelConverter\Callback;
 use PHPUnit\Framework\TestCase;
 
-final class CallbackConverterTest extends TestCase
+final class CallbackTest extends TestCase
 {
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\ReadModelConverter\CallbackConverter
+     * @covers \Lcobucci\Chimera\ServiceBus\ReadModelConverter\Callback
      *
-     * @uses \Lcobucci\Chimera\Tests\ReadModelConverter\AmazingDomainObject
-     * @uses \Lcobucci\Chimera\Tests\ReadModelConverter\FetchStuff
+     * @uses \Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDomainObject
+     * @uses \Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter\FetchStuff
      */
     public function convertShouldNotChangeResultIfMessageIsNotAQuery(): void
     {
-        $converter = new CallbackConverter();
+        $converter = new Callback();
         $domainObj = new AmazingDomainObject(1, 'Test');
 
         /** @var AmazingDomainObject $result */
@@ -30,15 +30,15 @@ final class CallbackConverterTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\ReadModelConverter\CallbackConverter
+     * @covers \Lcobucci\Chimera\ServiceBus\ReadModelConverter\Callback
      *
-     * @uses \Lcobucci\Chimera\Tests\ReadModelConverter\AmazingDomainObject
-     * @uses \Lcobucci\Chimera\Tests\ReadModelConverter\AmazingDto
-     * @uses \Lcobucci\Chimera\Tests\ReadModelConverter\AmazingFetchStuff
+     * @uses \Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDomainObject
+     * @uses \Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDto
+     * @uses \Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter\AmazingFetchStuff
      */
     public function convertShouldUseTheQueryCallbackToCreateASingleReadModel(): void
     {
-        $converter = new CallbackConverter();
+        $converter = new Callback();
         $domainObj = new AmazingDomainObject(1, 'Test');
 
         $result = $converter->convert(new AmazingFetchStuff(1), $domainObj);
@@ -51,15 +51,15 @@ final class CallbackConverterTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\ReadModelConverter\CallbackConverter
+     * @covers \Lcobucci\Chimera\ServiceBus\ReadModelConverter\Callback
      *
-     * @uses \Lcobucci\Chimera\Tests\ReadModelConverter\AmazingDomainObject
-     * @uses \Lcobucci\Chimera\Tests\ReadModelConverter\AmazingDto
-     * @uses \Lcobucci\Chimera\Tests\ReadModelConverter\AmazingFetchStuff
+     * @uses \Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDomainObject
+     * @uses \Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDto
+     * @uses \Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter\AmazingFetchStuff
      */
     public function convertShouldUseTheQueryCallbackToCreateMultipleReadModels(): void
     {
-        $converter = new CallbackConverter();
+        $converter = new Callback();
         $domainObj = new AmazingDomainObject(1, 'Test');
 
         $result = $converter->convert(new AmazingFetchStuff(1), [$domainObj]);

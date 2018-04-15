@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\Tests\ReadModelConverter;
+namespace Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter;
 
 final class FetchStuff
 {
