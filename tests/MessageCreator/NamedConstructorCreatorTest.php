@@ -27,7 +27,6 @@ final class NamedConstructorCreatorTest extends TestCase
 
         $creator = new NamedConstructorCreator();
 
-        /** @var DoStuff $message */
         $message = $creator->create(DoStuff::class, $request);
 
         self::assertInstanceOf(DoStuff::class, $message);
@@ -47,7 +46,6 @@ final class NamedConstructorCreatorTest extends TestCase
         $request = $this->createMock(ServerRequestInterface::class);
         $creator = new NamedConstructorCreator('aCustomName');
 
-        /** @var DoStuff $message */
         $message = $creator->create(DoStuff::class, $request);
 
         self::assertInstanceOf(DoStuff::class, $message);

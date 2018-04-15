@@ -19,9 +19,14 @@ build:
             tests:
                 override:
                     - php-scrutinizer-run
+                    - phpcs-run
+
+    dependencies:
+        override:
+            - composer install --no-interaction --prefer-dist
 
 checks:
-    php : true
+    php: true
 
 tools:
     external_code_coverage: true
