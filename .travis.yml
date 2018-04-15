@@ -43,7 +43,7 @@ jobs:
     - stage: Code Quality
       env: STATIC_ANALYSIS=1
       script:
-        - ./vendor/bin/phpstan analyse -c phpstan.neon -l max src tests
+        - ./vendor/bin/phpstan analyse
 
     - stage: Code Quality
       env: MUTATION_TESTS=1

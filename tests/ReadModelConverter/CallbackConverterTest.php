@@ -41,7 +41,6 @@ final class CallbackConverterTest extends TestCase
         $converter = new CallbackConverter();
         $domainObj = new AmazingDomainObject(1, 'Test');
 
-        /** @var AmazingDto $result */
         $result = $converter->convert(new AmazingFetchStuff(1), $domainObj);
 
         self::assertInstanceOf(AmazingDto::class, $result);
@@ -63,9 +62,9 @@ final class CallbackConverterTest extends TestCase
         $converter = new CallbackConverter();
         $domainObj = new AmazingDomainObject(1, 'Test');
 
-        /** @var AmazingDto[] $result */
         $result = $converter->convert(new AmazingFetchStuff(1), [$domainObj]);
 
+        self::assertInternalType('array', $result);
         self::assertContainsOnlyInstancesOf(AmazingDto::class, $result);
         self::assertCount(1, $result);
     }

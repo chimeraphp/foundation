@@ -20,8 +20,9 @@
     "require-dev": {
         "doctrine/coding-standard": "^4.0",
         "infection/infection": "^0.8",
-        "phpstan/phpstan": "^0.9",
-        "phpstan/phpstan-phpunit": "^0.9",
+        "phpstan/phpstan": "^0.10@dev",
+        "phpstan/phpstan-phpunit": "^0.10@dev",
+        "phpstan/phpstan-strict-rules": "^0.10@dev",
         "phpunit/phpunit": "^7.1",
         "squizlabs/php_codesniffer": "^3.2"
     },
