@@ -1,9 +1,7 @@
 {
     "timeout": 1,
     "source": {
-        "directories": [
-            "src"
-        ]
+        "directories": ["src"]
     },
     "logs": {
         "text": "infection-log.txt"
