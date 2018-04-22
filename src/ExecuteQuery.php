@@ -41,4 +41,12 @@ final class ExecuteQuery
             $this->messageCreator->create($this->query, $input)
         );
     }
+
+    /**
+     * Returns the name of the query to be handled
+     */
+    public function getQuery(): string
+    {
+        return $this->query;
+    }
 }

@@ -39,4 +39,12 @@ final class ExecuteCommand
             $this->messageCreator->create($this->command, $input)
         );
     }
+
+    /**
+     * Returns the name of the command to be handled
+     */
+    public function getCommand(): string
+    {
+        return $this->command;
+    }
 }
