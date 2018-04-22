@@ -46,6 +46,19 @@ final class ExecuteQueryTest extends TestCase
      * @test
      *
      * @covers ::__construct()
+     * @covers ::getQuery()
+     */
+    public function getQueryShouldReturnTheNameOfTheMessageToBeExecuted(): void
+    {
+        $action = new ExecuteQuery($this->bus, $this->messageCreator, 'test');
+
+        self::assertSame('test', $action->getQuery());
+    }
+
+    /**
+     * @test
+     *
+     * @covers ::__construct()
      * @covers ::fetch()
      */
     public function fetchShouldCreateTheMessageAndHandleItWithTheBus(): void
