@@ -12,6 +12,9 @@ use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use stdClass;
 
+/**
+ * @coversDefaultClass \Lcobucci\Chimera\ExecuteQuery
+ */
 final class ExecuteQueryTest extends TestCase
 {
     /**
@@ -42,9 +45,10 @@ final class ExecuteQueryTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\ExecuteQuery
+     * @covers ::__construct()
+     * @covers ::fetch()
      */
-    public function executeShouldCreateTheMessageAndHandleItWithTheBus(): void
+    public function fetchShouldCreateTheMessageAndHandleItWithTheBus(): void
     {
         $query = new stdClass();
 
@@ -64,9 +68,10 @@ final class ExecuteQueryTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\ExecuteQuery
+     * @covers ::__construct()
+     * @covers ::fetch()
      */
-    public function executeShouldNotCatchExceptionsFromBus(): void
+    public function fetchShouldNotCatchExceptionsFromBus(): void
     {
         $command   = new stdClass();
         $exception = new RuntimeException('No handler found');
@@ -88,9 +93,10 @@ final class ExecuteQueryTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\ExecuteQuery
+     * @covers ::__construct()
+     * @covers ::fetch()
      */
-    public function executeShouldNotCatchExceptionsFromMessageCreator(): void
+    public function fetchShouldNotCatchExceptionsFromMessageCreator(): void
     {
         $exception = new RuntimeException('Message creation failed');
 

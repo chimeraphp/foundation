@@ -12,6 +12,9 @@ use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use stdClass;
 
+/**
+ * @coversDefaultClass \Lcobucci\Chimera\ExecuteCommand
+ */
 final class ExecuteCommandTest extends TestCase
 {
     /**
@@ -42,7 +45,8 @@ final class ExecuteCommandTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\ExecuteCommand
+     * @covers ::__construct()
+     * @covers ::execute()
      */
     public function executeShouldCreateTheMessageAndHandleItWithTheBus(): void
     {
@@ -63,7 +67,8 @@ final class ExecuteCommandTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\ExecuteCommand
+     * @covers ::__construct()
+     * @covers ::execute()
      */
     public function executeShouldNotCatchExceptionsFromBus(): void
     {
@@ -87,7 +92,8 @@ final class ExecuteCommandTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\ExecuteCommand
+     * @covers ::__construct()
+     * @covers ::execute()
      */
     public function executeShouldNotCatchExceptionsFromMessageCreator(): void
     {
