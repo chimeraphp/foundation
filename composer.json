@@ -1,5 +1,5 @@
 {
-    "name": "lcobucci/chimera-foundation",
+    "name": "chimera/foundation",
     "description": "Base structure to connect PSR-7 objects to command and query buses",
     "type": "library",
     "license": "MIT",
@@ -39,7 +39,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0.x-dev"
+            "dev-master": "0.1.x-dev"
         }
     }
 }
