@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\ServiceBus\ReadModelConverter;
+namespace Chimera\ServiceBus\ReadModelConverter;
 
 /**
  * Defines the public API of a query object that uses a callback to convert query results

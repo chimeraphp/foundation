@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter;
+namespace Chimera\Tests\ServiceBus\ReadModelConverter;
 
-use Lcobucci\Chimera\ServiceBus\ReadModelConverter\Callback;
+use Chimera\ServiceBus\ReadModelConverter\Callback;
 use PHPUnit\Framework\TestCase;
 
 final class CallbackTest extends TestCase
@@ -11,10 +11,10 @@ final class CallbackTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\ServiceBus\ReadModelConverter\Callback
+     * @covers \Chimera\ServiceBus\ReadModelConverter\Callback
      *
-     * @uses \Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDomainObject
-     * @uses \Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter\FetchStuff
+     * @uses \Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDomainObject
+     * @uses \Chimera\Tests\ServiceBus\ReadModelConverter\FetchStuff
      */
     public function convertShouldNotChangeResultIfMessageIsNotAQuery(): void
     {
@@ -30,11 +30,11 @@ final class CallbackTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\ServiceBus\ReadModelConverter\Callback
+     * @covers \Chimera\ServiceBus\ReadModelConverter\Callback
      *
-     * @uses \Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDomainObject
-     * @uses \Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDto
-     * @uses \Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter\AmazingFetchStuff
+     * @uses \Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDomainObject
+     * @uses \Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDto
+     * @uses \Chimera\Tests\ServiceBus\ReadModelConverter\AmazingFetchStuff
      */
     public function convertShouldUseTheQueryCallbackToCreateASingleReadModel(): void
     {
@@ -51,11 +51,11 @@ final class CallbackTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\ServiceBus\ReadModelConverter\Callback
+     * @covers \Chimera\ServiceBus\ReadModelConverter\Callback
      *
-     * @uses \Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDomainObject
-     * @uses \Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDto
-     * @uses \Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter\AmazingFetchStuff
+     * @uses \Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDomainObject
+     * @uses \Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDto
+     * @uses \Chimera\Tests\ServiceBus\ReadModelConverter\AmazingFetchStuff
      */
     public function convertShouldUseTheQueryCallbackToCreateMultipleReadModels(): void
     {

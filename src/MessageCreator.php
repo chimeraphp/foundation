@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera;
+namespace Chimera;
 
 /**
  * Defines the public API for message (commands and queries) creation strategies

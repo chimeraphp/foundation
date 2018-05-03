@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\ServiceBus\ReadModelConverter;
+namespace Chimera\ServiceBus\ReadModelConverter;
 
-use Lcobucci\Chimera\ServiceBus\ReadModelConverter;
+use Chimera\ServiceBus\ReadModelConverter;
 use function array_map;
 use function is_array;
 

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\Tests\MessageCreator;
+namespace Chimera\Tests\MessageCreator;
 
-use Lcobucci\Chimera\Input;
-use Lcobucci\Chimera\MessageCreator\NamedConstructor;
+use Chimera\Input;
+use Chimera\MessageCreator\NamedConstructor;
 use PHPUnit\Framework\TestCase;
 use function uniqid;
 
@@ -13,9 +13,9 @@ final class NamedConstructorTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\MessageCreator\NamedConstructor
+     * @covers \Chimera\MessageCreator\NamedConstructor
      *
-     * @uses \Lcobucci\Chimera\Tests\MessageCreator\DoStuff
+     * @uses \Chimera\Tests\MessageCreator\DoStuff
      */
     public function createShouldUseDefaultCallbackToCreateTheMessageWhenNothingIsProvided(): void
     {
@@ -36,9 +36,9 @@ final class NamedConstructorTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\MessageCreator\NamedConstructor
+     * @covers \Chimera\MessageCreator\NamedConstructor
      *
-     * @uses \Lcobucci\Chimera\Tests\MessageCreator\DoStuff
+     * @uses \Chimera\Tests\MessageCreator\DoStuff
      */
     public function createShouldUseACustomisedConstructorWhenItWasConfigured(): void
     {

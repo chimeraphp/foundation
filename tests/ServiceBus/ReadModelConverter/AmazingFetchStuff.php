@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\Tests\ServiceBus\ReadModelConverter;
+namespace Chimera\Tests\ServiceBus\ReadModelConverter;
 
-use Lcobucci\Chimera\ServiceBus\ReadModelConverter\Query;
+use Chimera\ServiceBus\ReadModelConverter\Query;
 
 final class AmazingFetchStuff implements Query
 {

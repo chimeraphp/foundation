@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera;
+namespace Chimera;
 
 /**
  * Abstraction for a bus that either execute commands or queries

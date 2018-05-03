@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\MessageCreator;
+namespace Chimera\MessageCreator;
 
-use Lcobucci\Chimera\Input;
-use Lcobucci\Chimera\MessageCreator;
+use Chimera\Input;
+use Chimera\MessageCreator;
 use function assert;
 use function is_callable;
 

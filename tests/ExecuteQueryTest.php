@@ -1,19 +1,19 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\Tests;
+namespace Chimera\Tests;
 
-use Lcobucci\Chimera\ExecuteQuery;
-use Lcobucci\Chimera\Input;
-use Lcobucci\Chimera\MessageCreator;
-use Lcobucci\Chimera\ServiceBus;
+use Chimera\ExecuteQuery;
+use Chimera\Input;
+use Chimera\MessageCreator;
+use Chimera\ServiceBus;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use stdClass;
 
 /**
- * @coversDefaultClass \Lcobucci\Chimera\ExecuteQuery
+ * @coversDefaultClass \Chimera\ExecuteQuery
  */
 final class ExecuteQueryTest extends TestCase
 {

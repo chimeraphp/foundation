@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\IdentifierGenerator;
+namespace Chimera\IdentifierGenerator;
 
-use Lcobucci\Chimera\IdentifierGenerator;
+use Chimera\IdentifierGenerator;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 

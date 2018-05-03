@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\ServiceBus;
+namespace Chimera\ServiceBus;
 
 /**
  * Defines the public API for the services that converts domain concepts into read models

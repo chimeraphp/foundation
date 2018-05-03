@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\Tests\IdentifierGenerator;
+namespace Chimera\Tests\IdentifierGenerator;
 
-use Lcobucci\Chimera\IdentifierGenerator\RamseyUuid;
+use Chimera\IdentifierGenerator\RamseyUuid;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 
@@ -12,7 +12,7 @@ final class RamseyUuidTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\IdentifierGenerator\RamseyUuid
+     * @covers \Chimera\IdentifierGenerator\RamseyUuid
      */
     public function generateShouldReturnAUuidVersion4(): void
     {
@@ -26,7 +26,7 @@ final class RamseyUuidTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\IdentifierGenerator\RamseyUuid
+     * @covers \Chimera\IdentifierGenerator\RamseyUuid
      */
     public function generateShouldAlwaysReturnANewIdentifier(): void
     {

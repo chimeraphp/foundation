@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\Tests\MessageCreator;
+namespace Chimera\Tests\MessageCreator;
 
-use Lcobucci\Chimera\Input;
+use Chimera\Input;
 use function assert;
 use function is_string;
 
