@@ -64,7 +64,7 @@ for the really flexible [`jms/serializer`](https://github.com/schmittjoh/seriali
 * [`chimera/di-symfony`](https://github.com/chimeraphp/di-symfony): A set of
 compiler passes that plugs everything together while compiling the container, so that
 no unnecessary process is executed when the software is handling user requests
-* [`chimera/sample`](https://github.com/chimeraphp/sample): A very basic
+* [`chimera/sample-react`](https://github.com/chimeraphp/sample-react): A very basic
 application showing how to use this set of libraries
 
 ## License
