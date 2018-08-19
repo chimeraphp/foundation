@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Chimera\Tests\MessageCreator;
 
 use Chimera\Input;
+use Chimera\MessageCreator\MessageCannotBeCreated;
 use Chimera\MessageCreator\NamedConstructor;
 use PHPUnit\Framework\TestCase;
 use function uniqid;
@@ -50,5 +51,23 @@ final class NamedConstructorTest extends TestCase
         self::assertInstanceOf(DoStuff::class, $message);
         self::assertSame($input, $message->request);
         self::assertSame(['testing'], $message->extra);
+    }
+
+    /**
+     * @test
+     *
+     * @covers \Chimera\MessageCreator\NamedConstructor
+     * @covers \Chimera\MessageCreator\MessageCannotBeCreated
+     */
+    public function createShouldRaiseExceptionWhenNamedConstructorDoesNotExist(): void
+    {
+        $creator = new NamedConstructor('nonExistingMethod');
+
+        $this->expectException(MessageCannotBeCreated::class);
+        $this->expectExceptionMessage(
+            'The "Chimera\Tests\MessageCreator\DoStuff::nonExistingMethod" callback is invalid'
+        );
+
+        $creator->create(DoStuff::class, $this->createMock(Input::class));
     }
 }

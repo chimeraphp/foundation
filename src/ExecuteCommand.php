@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Chimera;
 
+use Chimera\MessageCreator\MessageCannotBeCreated;
+
 /**
  * Encapsulates the execution of a command
  */
@@ -32,6 +34,8 @@ final class ExecuteCommand
 
     /**
      * Creates the command with given input and executes it
+     *
+     * @throws MessageCannotBeCreated
      */
     public function execute(Input $input): void
     {
