@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Chimera;
 
+use Chimera\MessageCreator\MessageCannotBeCreated;
+
 /**
  * Encapsulates the execution of a query
  */
@@ -34,6 +36,8 @@ final class ExecuteQuery
      * Creates the query with given input, executes it, and returns the result
      *
      * @return mixed
+     *
+     * @throws MessageCannotBeCreated
      */
     public function fetch(Input $input)
     {

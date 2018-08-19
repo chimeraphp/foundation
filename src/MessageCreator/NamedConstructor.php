@@ -5,7 +5,6 @@ namespace Chimera\MessageCreator;
 
 use Chimera\Input;
 use Chimera\MessageCreator;
-use function assert;
 use function is_callable;
 
 /**
@@ -31,7 +30,10 @@ final class NamedConstructor implements MessageCreator
     public function create(string $message, Input $input): object
     {
         $callback = [$message, $this->methodName];
-        assert(is_callable($callback));
+
+        if (! is_callable($callback)) {
+            throw MessageCannotBeCreated::forInvalidCallback($message, $this->methodName);
+        }
 
         return $callback($input);
     }
