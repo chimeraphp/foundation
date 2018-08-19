@@ -18,8 +18,8 @@
         "ramsey/uuid": "^3.8"
     },
     "require-dev": {
-        "doctrine/coding-standard": "^4.0",
         "infection/infection": "^0.10",
+        "lcobucci/coding-standard": "^1.0",
         "phpstan/phpstan": "^0.10",
         "phpstan/phpstan-phpunit": "^0.10",
         "phpstan/phpstan-strict-rules": "^0.10",
