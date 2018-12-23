@@ -64,7 +64,7 @@ final class CallbackTest extends TestCase
 
         $result = $converter->convert(new AmazingFetchStuff(1), [$domainObj]);
 
-        self::assertInternalType('array', $result);
+        self::assertIsArray($result);
         self::assertContainsOnlyInstancesOf(AmazingDto::class, $result);
         self::assertCount(1, $result);
     }

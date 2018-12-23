@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace Chimera\Tests\ServiceBus\ReadModelConverter;
 
-final class AmazingDto implements \JsonSerializable
+use JsonSerializable;
+
+final class AmazingDto implements JsonSerializable
 {
     /**
      * @var int
