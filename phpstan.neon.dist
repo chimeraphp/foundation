@@ -9,3 +9,6 @@ parameters:
     paths:
         - src
         - tests
+
+    ignoreErrors:
+        - '#Parameter \#2 $haystack of static method PHPUnit\\Framework\\Assert::.*\(\) expects .*, array|object|null given#'
