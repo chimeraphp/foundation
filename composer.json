@@ -15,7 +15,7 @@
     },
     "require": {
         "php": "^7.3 || ^8.0",
-        "ramsey/uuid": "^3.8"
+        "ramsey/uuid": "^3.9"
     },
     "require-dev": {
         "infection/infection": "^0.15.0",
