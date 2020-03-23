@@ -5,7 +5,7 @@ namespace Chimera\Tests\IdentifierGenerator;
 
 use Chimera\IdentifierGenerator\RamseyUuid;
 use PHPUnit\Framework\TestCase;
-use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\Rfc4122\UuidV4;
 
 final class RamseyUuidTest extends TestCase
 {
@@ -19,8 +19,7 @@ final class RamseyUuidTest extends TestCase
         $generator  = new RamseyUuid();
         $identifier = $generator->generate();
 
-        self::assertInstanceOf(Uuid::class, $identifier);
-        self::assertSame(4, $identifier->getVersion());
+        self::assertInstanceOf(UuidV4::class, $identifier);
     }
 
     /**
@@ -35,8 +34,8 @@ final class RamseyUuidTest extends TestCase
         $identifier1 = $generator->generate();
         $identifier2 = $generator->generate();
 
-        self::assertInstanceOf(Uuid::class, $identifier1);
-        self::assertInstanceOf(Uuid::class, $identifier2);
+        self::assertInstanceOf(UuidV4::class, $identifier1);
+        self::assertInstanceOf(UuidV4::class, $identifier2);
 
         self::assertNotEquals($identifier1, $identifier2);
         self::assertNotSame((string) $identifier1, (string) $identifier2);
