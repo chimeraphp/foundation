@@ -13,8 +13,6 @@ interface IdentifierGenerator
      *
      * The generated ID is supposed to be used on a resource that
      * is going to be created by a command handler
-     *
-     * @return mixed
      */
-    public function generate();
+    public function generate(): object;
 }
