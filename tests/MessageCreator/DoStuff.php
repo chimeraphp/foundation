@@ -9,15 +9,12 @@ use function is_string;
 
 final class DoStuff
 {
-    /**
-     * @var Input
-     */
-    public $request;
+    public Input $request;
 
     /**
      * @var string[]
      */
-    public $extra;
+    public array $extra;
 
     /**
      * @param string[] $extra

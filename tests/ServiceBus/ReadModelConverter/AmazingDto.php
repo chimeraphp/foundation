@@ -7,15 +7,8 @@ use JsonSerializable;
 
 final class AmazingDto implements JsonSerializable
 {
-    /**
-     * @var int
-     */
-    public $id;
-
-    /**
-     * @var string
-     */
-    public $name;
+    public int $id;
+    public string $name;
 
     private function __construct(int $id, string $name)
     {
