@@ -5,15 +5,8 @@ namespace Chimera\Tests\ServiceBus\ReadModelConverter;
 
 final class AmazingDomainObject
 {
-    /**
-     * @var int
-     */
-    private $id;
-
-    /**
-     * @var string
-     */
-    private $name;
+    private int $id;
+    private string $name;
 
     public function __construct(int $id, string $name)
     {

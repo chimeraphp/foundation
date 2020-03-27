@@ -18,19 +18,19 @@ use stdClass;
 final class ExecuteCommandTest extends TestCase
 {
     /**
-     * @var ServiceBus|MockObject
+     * @var ServiceBus&MockObject
      */
-    private $bus;
+    private ServiceBus $bus;
 
     /**
-     * @var Input|MockObject
+     * @var Input&MockObject
      */
-    private $input;
+    private Input $input;
 
     /**
-     * @var MessageCreator|MockObject
+     * @var MessageCreator&MockObject
      */
-    private $messageCreator;
+    private MessageCreator $messageCreator;
 
     /**
      * @before

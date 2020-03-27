@@ -5,6 +5,7 @@ namespace Chimera\Tests\ServiceBus\ReadModelConverter;
 
 use Chimera\ServiceBus\ReadModelConverter\Callback;
 use PHPUnit\Framework\TestCase;
+use function assert;
 
 final class CallbackTest extends TestCase
 {
@@ -21,8 +22,8 @@ final class CallbackTest extends TestCase
         $converter = new Callback();
         $domainObj = new AmazingDomainObject(1, 'Test');
 
-        /** @var AmazingDomainObject $result */
         $result = $converter->convert(new FetchStuff(1), $domainObj);
+        assert($result instanceof AmazingDomainObject);
 
         self::assertSame($domainObj, $result);
     }

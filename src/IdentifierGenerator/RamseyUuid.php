@@ -12,9 +12,6 @@ use Ramsey\Uuid\UuidInterface;
  */
 final class RamseyUuid implements IdentifierGenerator
 {
-    /**
-     * {@inheritdoc}
-     */
     public function generate(): UuidInterface
     {
         return Uuid::uuid4();

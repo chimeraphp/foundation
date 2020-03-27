@@ -10,20 +10,9 @@ use Chimera\MessageCreator\MessageCannotBeCreated;
  */
 final class ExecuteCommand
 {
-    /**
-     * @var ServiceBus
-     */
-    private $bus;
-
-    /**
-     * @var MessageCreator
-     */
-    private $messageCreator;
-
-    /**
-     * @var string
-     */
-    private $command;
+    private ServiceBus $bus;
+    private MessageCreator $messageCreator;
+    private string $command;
 
     public function __construct(ServiceBus $bus, MessageCreator $messageCreator, string $command)
     {

@@ -25,7 +25,7 @@ interface Input
     /**
      * Returns the data to be used to create the message object
      *
-     * @return mixed[]
+     * @return array<string, mixed>
      */
     public function getData(): array;
 }
