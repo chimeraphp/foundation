@@ -5,7 +5,7 @@
 [![Unstable Version](https://img.shields.io/packagist/vpre/chimera/foundation.svg?style=flat-square)](https://packagist.org/packages/chimera/foundation)
 
 ![Branch master](https://img.shields.io/badge/branch-master-brightgreen.svg?style=flat-square)
-[![Build Status](https://img.shields.io/travis/chimeraphp/foundation/master.svg?style=flat-square)](http://travis-ci.org/#!/chimeraphp/foundation)
+[![Build Status](https://img.shields.io/travis/com/chimeraphp/foundation/master.svg?style=flat-square)](http://travis-ci.com/chimeraphp/foundation)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/chimeraphp/foundation/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/chimeraphp/foundation/?branch=master)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/chimeraphp/foundation/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/chimeraphp/foundation/?branch=master)
 
