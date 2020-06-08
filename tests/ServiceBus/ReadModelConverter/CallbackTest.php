@@ -5,6 +5,7 @@ namespace Chimera\Tests\ServiceBus\ReadModelConverter;
 
 use Chimera\ServiceBus\ReadModelConverter\Callback;
 use PHPUnit\Framework\TestCase;
+
 use function assert;
 
 final class CallbackTest extends TestCase

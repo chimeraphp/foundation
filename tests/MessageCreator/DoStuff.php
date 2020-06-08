@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Chimera\Tests\MessageCreator;
 
 use Chimera\Input;
+
 use function assert;
 use function is_string;
 
@@ -11,9 +12,7 @@ final class DoStuff
 {
     public Input $request;
 
-    /**
-     * @var string[]
-     */
+    /** @var string[] */
     public array $extra;
 
     /**

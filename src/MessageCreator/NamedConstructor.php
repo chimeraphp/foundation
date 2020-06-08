@@ -5,6 +5,7 @@ namespace Chimera\MessageCreator;
 
 use Chimera\Input;
 use Chimera\MessageCreator;
+
 use function is_callable;
 
 /**

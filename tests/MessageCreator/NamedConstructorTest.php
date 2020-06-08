@@ -7,6 +7,7 @@ use Chimera\Input;
 use Chimera\MessageCreator\MessageCannotBeCreated;
 use Chimera\MessageCreator\NamedConstructor;
 use PHPUnit\Framework\TestCase;
+
 use function uniqid;
 
 final class NamedConstructorTest extends TestCase
