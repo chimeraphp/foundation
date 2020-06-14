@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Chimera\ServiceBus\ReadModelConverter;
 
 use Chimera\ServiceBus\ReadModelConverter;
+
 use function array_map;
 use function is_array;
 

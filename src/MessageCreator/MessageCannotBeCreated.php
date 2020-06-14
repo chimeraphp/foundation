@@ -5,6 +5,7 @@ namespace Chimera\MessageCreator;
 
 use Chimera\Exception;
 use RuntimeException;
+
 use function sprintf;
 
 final class MessageCannotBeCreated extends RuntimeException implements Exception

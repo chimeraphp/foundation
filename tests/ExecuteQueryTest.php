@@ -17,19 +17,13 @@ use stdClass;
  */
 final class ExecuteQueryTest extends TestCase
 {
-    /**
-     * @var ServiceBus&MockObject
-     */
+    /** @var ServiceBus&MockObject */
     private ServiceBus $bus;
 
-    /**
-     * @var Input&MockObject
-     */
+    /** @var Input&MockObject */
     private Input $input;
 
-    /**
-     * @var MessageCreator&MockObject
-     */
+    /** @var MessageCreator&MockObject */
     private MessageCreator $messageCreator;
 
     /**
