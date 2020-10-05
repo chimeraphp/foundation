@@ -10,15 +10,15 @@ use PHPUnit\Framework\TestCase;
 
 use function uniqid;
 
+/**
+ * @covers \Chimera\MessageCreator\NamedConstructor
+ * @covers \Chimera\MessageCreator\MessageCannotBeCreated
+ *
+ * @uses \Chimera\Tests\MessageCreator\DoStuff
+ */
 final class NamedConstructorTest extends TestCase
 {
-    /**
-     * @test
-     *
-     * @covers \Chimera\MessageCreator\NamedConstructor
-     *
-     * @uses \Chimera\Tests\MessageCreator\DoStuff
-     */
+    /** @test */
     public function createShouldUseDefaultCallbackToCreateTheMessageWhenNothingIsProvided(): void
     {
         $id    = uniqid('testing', true);
@@ -35,13 +35,7 @@ final class NamedConstructorTest extends TestCase
         self::assertSame([$id], $message->extra);
     }
 
-    /**
-     * @test
-     *
-     * @covers \Chimera\MessageCreator\NamedConstructor
-     *
-     * @uses \Chimera\Tests\MessageCreator\DoStuff
-     */
+    /** @test */
     public function createShouldUseACustomisedConstructorWhenItWasConfigured(): void
     {
         $input = $this->createMock(Input::class);
@@ -54,12 +48,7 @@ final class NamedConstructorTest extends TestCase
         self::assertSame(['testing'], $message->extra);
     }
 
-    /**
-     * @test
-     *
-     * @covers \Chimera\MessageCreator\NamedConstructor
-     * @covers \Chimera\MessageCreator\MessageCannotBeCreated
-     */
+    /** @test */
     public function createShouldRaiseExceptionWhenNamedConstructorDoesNotExist(): void
     {
         $creator = new NamedConstructor('nonExistingMethod');

@@ -7,13 +7,10 @@ use Chimera\IdentifierGenerator\RamseyUuid;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Lazy\LazyUuidFromString;
 
+/** @covers \Chimera\IdentifierGenerator\RamseyUuid */
 final class RamseyUuidTest extends TestCase
 {
-    /**
-     * @test
-     *
-     * @covers \Chimera\IdentifierGenerator\RamseyUuid
-     */
+    /** @test */
     public function generateShouldReturnAUuidVersion4(): void
     {
         $generator  = new RamseyUuid();
@@ -22,11 +19,7 @@ final class RamseyUuidTest extends TestCase
         self::assertInstanceOf(LazyUuidFromString::class, $identifier);
     }
 
-    /**
-     * @test
-     *
-     * @covers \Chimera\IdentifierGenerator\RamseyUuid
-     */
+    /** @test */
     public function generateShouldAlwaysReturnANewIdentifier(): void
     {
         $generator = new RamseyUuid();

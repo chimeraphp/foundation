@@ -15,9 +15,7 @@ final class DoStuff
     /** @var string[] */
     public array $extra;
 
-    /**
-     * @param string[] $extra
-     */
+    /** @param string[] $extra */
     private function __construct(Input $request, array $extra)
     {
         $this->request = $request;
