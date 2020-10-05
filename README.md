@@ -1,13 +1,11 @@
 # Chimera - foundation
 
-[![Total Downloads](https://img.shields.io/packagist/dt/chimera/foundation.svg?style=flat-square)](https://packagist.org/packages/chimera/foundation)
-[![Latest Stable Version](https://img.shields.io/packagist/v/chimera/foundation.svg?style=flat-square)](https://packagist.org/packages/chimera/foundation)
-[![Unstable Version](https://img.shields.io/packagist/vpre/chimera/foundation.svg?style=flat-square)](https://packagist.org/packages/chimera/foundation)
+[![Total Downloads]](https://packagist.org/packages/chimera/foundation)
+[![Latest Stable Version]](https://packagist.org/packages/chimera/foundation)
+[![Unstable Version]](https://packagist.org/packages/chimera/foundation)
 
-![Branch master](https://img.shields.io/badge/branch-master-brightgreen.svg?style=flat-square)
-[![Build Status](https://img.shields.io/travis/com/chimeraphp/foundation/master.svg?style=flat-square)](http://travis-ci.com/chimeraphp/foundation)
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/chimeraphp/foundation/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/chimeraphp/foundation/?branch=master)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/chimeraphp/foundation/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/chimeraphp/foundation/?branch=master)
+[![Build Status]](https://github.com/chimeraphp/foundation/actions?query=workflow%3A%22PHPUnit%20Tests%22+branch%3Amaster)
+[![Code Coverage]](https://codecov.io/gh/chimeraphp/foundation)
 
 > The term Chimera (_/kɪˈmɪərə/_ or _/kaɪˈmɪərə/_) has come to describe any
 mythical or fictional animal with parts taken from various animals, or to 
@@ -30,8 +28,7 @@ libraries together without creating a huge monster.
 
 ## Installation
 
-You probably won't depend directly on this package, but it is available on [Packagist](http://packagist.org/packages/chimera/foundation),
-and can be installed using [Composer](http://getcomposer.org):
+You probably won't depend directly on this package, but it is available on [Packagist], and can be installed using [Composer]:
 
 ```shell
 $ composer require chimera/foundation
@@ -45,7 +42,7 @@ about `assert()` is that we can (and should) disable it in production mode so
 that we don't have useless statements.
 
 So, for production mode, we recommend you to set `zend.assertions` to `-1` in your `php.ini`.
-For development you should leave `zend.assertions` as `1` and set `assert.exception` to `1`, which
+For development, you should leave `zend.assertions` as `1` and set `assert.exception` to `1`, which
 will make PHP throw an [`AssertionError`](https://secure.php.net/manual/en/class.assertionerror.php)
 when things go wrong.
 
@@ -71,4 +68,13 @@ application showing how to use this set of libraries (using ReactPHP)
 
 ## License
 
-MIT, see [LICENSE file](https://github.com/chimeraphp/foundation/blob/master/LICENSE).
+MIT, see [LICENSE].
+
+[Total Downloads]: https://img.shields.io/packagist/dt/chimera/foundation.svg?style=flat-square
+[Latest Stable Version]: https://img.shields.io/packagist/v/chimera/foundation.svg?style=flat-square
+[Unstable Version]: https://img.shields.io/packagist/vpre/chimera/foundation.svg?style=flat-square
+[Build Status]: https://img.shields.io/github/workflow/status/chimeraphp/foundation/PHPUnit%20tests/master?style=flat-square
+[Code Coverage]: https://codecov.io/gh/chimeraphp/foundation/branch/master/graph/badge.svg
+[Packagist]: http://packagist.org/packages/chimera/foundation
+[Composer]: http://getcomposer.org
+[LICENSE]: LICENSE
