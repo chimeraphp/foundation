@@ -12,9 +12,7 @@ use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use stdClass;
 
-/**
- * @coversDefaultClass \Chimera\ExecuteQuery
- */
+/** @coversDefaultClass \Chimera\ExecuteQuery */
 final class ExecuteQueryTest extends TestCase
 {
     /** @var ServiceBus&MockObject */
@@ -26,9 +24,7 @@ final class ExecuteQueryTest extends TestCase
     /** @var MessageCreator&MockObject */
     private MessageCreator $messageCreator;
 
-    /**
-     * @before
-     */
+    /** @before */
     public function createDependencies(): void
     {
         $this->bus            = $this->createMock(ServiceBus::class);
@@ -119,9 +115,7 @@ final class ExecuteQueryTest extends TestCase
         $this->executeAction();
     }
 
-    /**
-     * @return mixed
-     */
+    /** @return mixed */
     private function executeAction()
     {
         $action = new ExecuteQuery($this->bus, $this->messageCreator, 'test');

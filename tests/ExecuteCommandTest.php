@@ -12,9 +12,7 @@ use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use stdClass;
 
-/**
- * @coversDefaultClass \Chimera\ExecuteCommand
- */
+/** @coversDefaultClass \Chimera\ExecuteCommand */
 final class ExecuteCommandTest extends TestCase
 {
     /** @var ServiceBus&MockObject */
@@ -26,9 +24,7 @@ final class ExecuteCommandTest extends TestCase
     /** @var MessageCreator&MockObject */
     private MessageCreator $messageCreator;
 
-    /**
-     * @before
-     */
+    /** @before */
     public function createDependencies(): void
     {
         $this->bus            = $this->createMock(ServiceBus::class);

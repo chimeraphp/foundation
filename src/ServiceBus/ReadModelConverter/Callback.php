@@ -13,9 +13,7 @@ use function is_array;
  */
 final class Callback implements ReadModelConverter
 {
-    /**
-     * {@inheritdoc}
-     */
+    /** @inheritDoc */
     public function convert(object $query, $result)
     {
         if (! $query instanceof Query) {
