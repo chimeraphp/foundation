@@ -40,9 +40,9 @@ final class ExecuteQueryTest extends TestCase
      */
     public function getQueryShouldReturnTheNameOfTheMessageToBeExecuted(): void
     {
-        $action = new ExecuteQuery($this->bus, $this->messageCreator, 'test');
+        $action = new ExecuteQuery($this->bus, $this->messageCreator, SampleMessage::class);
 
-        self::assertSame('test', $action->getQuery());
+        self::assertSame(SampleMessage::class, $action->getQuery());
     }
 
     /**
@@ -57,7 +57,7 @@ final class ExecuteQueryTest extends TestCase
 
         $this->messageCreator->expects(self::once())
                              ->method('create')
-                             ->with('test', $this->input)
+                             ->with(SampleMessage::class, $this->input)
                              ->willReturn($query);
 
         $this->bus->expects(self::once())
@@ -81,7 +81,7 @@ final class ExecuteQueryTest extends TestCase
 
         $this->messageCreator->expects(self::once())
                              ->method('create')
-                             ->with('test', $this->input)
+                             ->with(SampleMessage::class, $this->input)
                              ->willReturn($command);
 
         $this->bus->expects(self::once())
@@ -105,7 +105,7 @@ final class ExecuteQueryTest extends TestCase
 
         $this->messageCreator->expects(self::once())
                              ->method('create')
-                             ->with('test', $this->input)
+                             ->with(SampleMessage::class, $this->input)
                              ->willThrowException($exception);
 
         $this->bus->expects(self::never())
@@ -118,7 +118,7 @@ final class ExecuteQueryTest extends TestCase
     /** @return mixed */
     private function executeAction()
     {
-        $action = new ExecuteQuery($this->bus, $this->messageCreator, 'test');
+        $action = new ExecuteQuery($this->bus, $this->messageCreator, SampleMessage::class);
 
         return $action->fetch($this->input);
     }

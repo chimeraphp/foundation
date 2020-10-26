@@ -13,6 +13,12 @@ interface MessageCreator
     /**
      * Creates an instance of given message using the provided input
      *
+     * @template T of object
+     *
+     * @param class-string<T> $message
+     *
+     * @return T
+     *
      * @throws MessageCannotBeCreated
      */
     public function create(string $message, Input $input): object;

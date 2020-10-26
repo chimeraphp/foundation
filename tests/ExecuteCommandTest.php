@@ -40,9 +40,9 @@ final class ExecuteCommandTest extends TestCase
      */
     public function getCommandShouldReturnTheNameOfTheMessageToBeExecuted(): void
     {
-        $action = new ExecuteCommand($this->bus, $this->messageCreator, 'test');
+        $action = new ExecuteCommand($this->bus, $this->messageCreator, SampleMessage::class);
 
-        self::assertSame('test', $action->getCommand());
+        self::assertSame(SampleMessage::class, $action->getCommand());
     }
 
     /**
@@ -57,7 +57,7 @@ final class ExecuteCommandTest extends TestCase
 
         $this->messageCreator->expects(self::once())
                              ->method('create')
-                             ->with('test', $this->input)
+                             ->with(SampleMessage::class, $this->input)
                              ->willReturn($command);
 
         $this->bus->expects(self::once())
@@ -80,7 +80,7 @@ final class ExecuteCommandTest extends TestCase
 
         $this->messageCreator->expects(self::once())
                              ->method('create')
-                             ->with('test', $this->input)
+                             ->with(SampleMessage::class, $this->input)
                              ->willReturn($command);
 
         $this->bus->expects(self::once())
@@ -104,7 +104,7 @@ final class ExecuteCommandTest extends TestCase
 
         $this->messageCreator->expects(self::once())
                              ->method('create')
-                             ->with('test', $this->input)
+                             ->with(SampleMessage::class, $this->input)
                              ->willThrowException($exception);
 
         $this->bus->expects(self::never())
@@ -116,7 +116,7 @@ final class ExecuteCommandTest extends TestCase
 
     private function executeAction(): void
     {
-        $action = new ExecuteCommand($this->bus, $this->messageCreator, 'test');
+        $action = new ExecuteCommand($this->bus, $this->messageCreator, SampleMessage::class);
         $action->execute($this->input);
     }
 }

@@ -12,8 +12,11 @@ final class ExecuteCommand
 {
     private ServiceBus $bus;
     private MessageCreator $messageCreator;
+
+    /** @var class-string */
     private string $command;
 
+    /** @param class-string $command */
     public function __construct(ServiceBus $bus, MessageCreator $messageCreator, string $command)
     {
         $this->bus            = $bus;
@@ -35,6 +38,8 @@ final class ExecuteCommand
 
     /**
      * Returns the name of the command to be handled
+     *
+     * @return class-string
      */
     public function getCommand(): string
     {
