@@ -12,8 +12,11 @@ final class ExecuteQuery
 {
     private ServiceBus $bus;
     private MessageCreator $messageCreator;
+
+    /** @var class-string */
     private string $query;
 
+    /** @param class-string $query */
     public function __construct(ServiceBus $bus, MessageCreator $messageCreator, string $query)
     {
         $this->bus            = $bus;
@@ -37,6 +40,8 @@ final class ExecuteQuery
 
     /**
      * Returns the name of the query to be handled
+     *
+     * @return class-string
      */
     public function getQuery(): string
     {

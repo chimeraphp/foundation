@@ -30,7 +30,6 @@ final class NamedConstructorTest extends TestCase
         $creator = new NamedConstructor();
         $message = $creator->create(DoStuff::class, $input);
 
-        self::assertInstanceOf(DoStuff::class, $message);
         self::assertSame($input, $message->request);
         self::assertSame([$id], $message->extra);
     }
@@ -43,7 +42,6 @@ final class NamedConstructorTest extends TestCase
         $creator = new NamedConstructor('aCustomName');
         $message = $creator->create(DoStuff::class, $input);
 
-        self::assertInstanceOf(DoStuff::class, $message);
         self::assertSame($input, $message->request);
         self::assertSame(['testing'], $message->extra);
     }
