@@ -1,7 +1,7 @@
 {
     "name": "chimera/foundation",
-    "description": "Base structure to connect PSR-7 objects to command and query buses",
     "type": "library",
+    "description": "Base structure to connect PSR-7 objects to command and query buses",
     "license": "MIT",
     "authors": [
         {
@@ -9,10 +9,6 @@
             "email": "lcobucci@gmail.com"
         }
     ],
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
     "require": {
         "php": "^7.4 || ^8.0",
         "ramsey/uuid": "^4.1"
@@ -27,6 +23,15 @@
         "phpstan/phpstan-strict-rules": "^0.12",
         "phpunit/phpunit": "^9.5"
     },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.4.x-dev"
+        }
+    },
     "autoload": {
         "psr-4": {
             "Chimera\\": "src"
@@ -35,11 +40,6 @@
     "autoload-dev": {
         "psr-4": {
             "Chimera\\Tests\\": "tests"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.4.x-dev"
         }
     }
 }
