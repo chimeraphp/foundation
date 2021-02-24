@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e5fc28acddce86035da2839cbadfe346",
+    "content-hash": "e50278f8ce23ce64553d328f84c67a65",
     "packages": [
         {
             "name": "brick/math",
@@ -1067,32 +1067,32 @@
         },
         {
             "name": "ocramius/package-versions",
-            "version": "2.1.0",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ocramius/PackageVersions.git",
-                "reference": "a7e35c34bc166a5684a1e2f13da7b1d6a821349d"
+                "reference": "8e96fb9f4671eff86e8e487ff45c49bdc2d2d677"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/a7e35c34bc166a5684a1e2f13da7b1d6a821349d",
-                "reference": "a7e35c34bc166a5684a1e2f13da7b1d6a821349d",
+                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/8e96fb9f4671eff86e8e487ff45c49bdc2d2d677",
+                "reference": "8e96fb9f4671eff86e8e487ff45c49bdc2d2d677",
                 "shasum": ""
             },
             "require": {
-                "composer-runtime-api": "^2.0.0",
-                "php": "^7.4.7 || ~8.0.0"
+                "composer-runtime-api": "^2.1.0",
+                "php": "~8.0.0 || ~8.1.0"
             },
             "replace": {
                 "composer/package-versions-deprecated": "*"
             },
             "require-dev": {
-                "composer/composer": "^2.0.0@dev",
-                "doctrine/coding-standard": "^8.1.0",
+                "composer/composer": "^2.1.8",
+                "doctrine/coding-standard": "^9.0.0",
                 "ext-zip": "^1.15.0",
-                "infection/infection": "dev-master#8d6c4d6b15ec58d3190a78b7774a5d604ec1075a",
-                "phpunit/phpunit": "~9.3.11",
-                "vimeo/psalm": "^4.0.1"
+                "phpunit/phpunit": "^9.5.9",
+                "roave/infection-static-analysis-plugin": "^1.10.0",
+                "vimeo/psalm": "^4.10.0"
             },
             "type": "library",
             "autoload": {
@@ -1113,7 +1113,7 @@
             "description": "Provides efficient querying for installed package versions (no runtime IO)",
             "support": {
                 "issues": "https://github.com/Ocramius/PackageVersions/issues",
-                "source": "https://github.com/Ocramius/PackageVersions/tree/2.1.0"
+                "source": "https://github.com/Ocramius/PackageVersions/tree/2.4.0"
             },
             "funding": [
                 {
@@ -1125,7 +1125,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-21T13:48:04+00:00"
+            "time": "2021-09-19T02:32:19+00:00"
         },
         {
             "name": "ondram/ci-detector",
@@ -4791,8 +4791,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4 || ^8.0"
+        "php": "^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
