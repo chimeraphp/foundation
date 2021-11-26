@@ -10,18 +10,12 @@ use Chimera\MessageCreator\MessageCannotBeCreated;
  */
 final class ExecuteCommand
 {
-    private ServiceBus $bus;
-    private MessageCreator $messageCreator;
-
-    /** @var class-string */
-    private string $command;
-
     /** @param class-string $command */
-    public function __construct(ServiceBus $bus, MessageCreator $messageCreator, string $command)
-    {
-        $this->bus            = $bus;
-        $this->messageCreator = $messageCreator;
-        $this->command        = $command;
+    public function __construct(
+        private ServiceBus $bus,
+        private MessageCreator $messageCreator,
+        private string $command,
+    ) {
     }
 
     /**
@@ -31,9 +25,7 @@ final class ExecuteCommand
      */
     public function execute(Input $input): void
     {
-        $this->bus->handle(
-            $this->messageCreator->create($this->command, $input)
-        );
+        $this->bus->handle($this->messageCreator->create($this->command, $input));
     }
 
     /**

@@ -15,12 +15,8 @@ interface Input
      * Returns metadata related to the input
      *
      * The metadata can be used to retrieve options or routing arguments
-     *
-     * @param mixed|null $default
-     *
-     * @return mixed|null
      */
-    public function getAttribute(string $name, $default = null);
+    public function getAttribute(string $name, mixed $default = null): mixed;
 
     /**
      * Returns the data to be used to create the message object

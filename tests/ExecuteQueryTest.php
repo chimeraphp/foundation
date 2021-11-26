@@ -115,8 +115,7 @@ final class ExecuteQueryTest extends TestCase
         $this->executeAction();
     }
 
-    /** @return mixed */
-    private function executeAction()
+    private function executeAction(): mixed
     {
         $action = new ExecuteQuery($this->bus, $this->messageCreator, SampleMessage::class);
 

@@ -53,7 +53,7 @@ final class NamedConstructorTest extends TestCase
 
         $this->expectException(MessageCannotBeCreated::class);
         $this->expectExceptionMessage(
-            'The "Chimera\Tests\MessageCreator\DoStuff::nonExistingMethod" callback is invalid'
+            'The "Chimera\Tests\MessageCreator\DoStuff::nonExistingMethod" callback is invalid',
         );
 
         $creator->create(DoStuff::class, $this->createMock(Input::class));

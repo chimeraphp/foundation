@@ -16,6 +16,7 @@ jobs:
           fetch-depth: 0
 
       - name: "BC Check"
+        continue-on-error: true
         uses: docker://nyholm/roave-bc-check-ga
         with:
           args: --from=${{ github.event.pull_request.base.sha }}
