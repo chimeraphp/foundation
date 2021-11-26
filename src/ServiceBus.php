@@ -10,8 +10,6 @@ interface ServiceBus
 {
     /**
      * Processes the given message and returns the result of the operation
-     *
-     * @return mixed|null
      */
-    public function handle(object $message);
+    public function handle(object $message): mixed;
 }

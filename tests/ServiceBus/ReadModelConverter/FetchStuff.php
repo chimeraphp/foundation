@@ -5,10 +5,7 @@ namespace Chimera\Tests\ServiceBus\ReadModelConverter;
 
 final class FetchStuff
 {
-    public int $id;
-
-    public function __construct(int $id)
+    public function __construct(public int $id)
     {
-        $this->id = $id;
     }
 }

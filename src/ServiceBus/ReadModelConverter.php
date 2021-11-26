@@ -15,5 +15,5 @@ interface ReadModelConverter
      *
      * @return object|mixed[]|null
      */
-    public function convert(object $query, $result);
+    public function convert(object $query, object|array|null $result): object|array|null;
 }

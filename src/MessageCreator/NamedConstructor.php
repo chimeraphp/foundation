@@ -15,11 +15,8 @@ final class NamedConstructor implements MessageCreator
 {
     private const DEFAULT_CONSTRUCTOR = 'fromInput';
 
-    private string $methodName;
-
-    public function __construct(string $methodName = self::DEFAULT_CONSTRUCTOR)
+    public function __construct(private string $methodName = self::DEFAULT_CONSTRUCTOR)
     {
-        $this->methodName = $methodName;
     }
 
     public function create(string $message, Input $input): object

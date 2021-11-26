@@ -10,32 +10,22 @@ use Chimera\MessageCreator\MessageCannotBeCreated;
  */
 final class ExecuteQuery
 {
-    private ServiceBus $bus;
-    private MessageCreator $messageCreator;
-
-    /** @var class-string */
-    private string $query;
-
     /** @param class-string $query */
-    public function __construct(ServiceBus $bus, MessageCreator $messageCreator, string $query)
-    {
-        $this->bus            = $bus;
-        $this->messageCreator = $messageCreator;
-        $this->query          = $query;
+    public function __construct(
+        private ServiceBus $bus,
+        private MessageCreator $messageCreator,
+        private string $query,
+    ) {
     }
 
     /**
      * Creates the query with given input, executes it, and returns the result
      *
-     * @return mixed
-     *
      * @throws MessageCannotBeCreated
      */
-    public function fetch(Input $input)
+    public function fetch(Input $input): mixed
     {
-        return $this->bus->handle(
-            $this->messageCreator->create($this->query, $input)
-        );
+        return $this->bus->handle($this->messageCreator->create($this->query, $input));
     }
 
     /**

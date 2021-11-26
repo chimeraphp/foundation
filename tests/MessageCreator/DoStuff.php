@@ -10,16 +10,9 @@ use function is_string;
 
 final class DoStuff
 {
-    public Input $request;
-
-    /** @var string[] */
-    public array $extra;
-
     /** @param string[] $extra */
-    private function __construct(Input $request, array $extra)
+    private function __construct(public Input $request, public array $extra)
     {
-        $this->request = $request;
-        $this->extra   = $extra;
     }
 
     public static function fromInput(Input $input): self

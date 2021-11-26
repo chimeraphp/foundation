@@ -11,13 +11,8 @@ final class AppendGeneratedIdentifier implements InputExtractor
 {
     private const DEFAULT_NAME = 'id';
 
-    private InputExtractor $decorated;
-    private string $attributeName;
-
-    public function __construct(InputExtractor $decorated, string $attributeName = self::DEFAULT_NAME)
+    public function __construct(private InputExtractor $decorated, private string $attributeName = self::DEFAULT_NAME)
     {
-        $this->decorated     = $decorated;
-        $this->attributeName = $attributeName;
     }
 
     /** @inheritdoc */
