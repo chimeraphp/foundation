@@ -42,7 +42,7 @@ final class ExecuteQueryTest extends TestCase
     {
         $action = new ExecuteQuery($this->bus, $this->messageCreator, SampleMessage::class);
 
-        self::assertSame(SampleMessage::class, $action->getQuery());
+        self::assertSame(SampleMessage::class, $action->getQuery()); // @phpstan-ignore-line we'll remove this soon
     }
 
     /**

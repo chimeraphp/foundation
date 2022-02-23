@@ -12,9 +12,9 @@ final class ExecuteQuery
 {
     /** @param class-string $query */
     public function __construct(
-        private ServiceBus $bus,
-        private MessageCreator $messageCreator,
-        private string $query,
+        private readonly ServiceBus $bus,
+        private readonly MessageCreator $messageCreator,
+        public readonly string $query,
     ) {
     }
 
@@ -30,6 +30,8 @@ final class ExecuteQuery
 
     /**
      * Returns the name of the query to be handled
+     *
+     * @deprecated
      *
      * @return class-string
      */

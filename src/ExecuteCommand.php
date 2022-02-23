@@ -12,9 +12,9 @@ final class ExecuteCommand
 {
     /** @param class-string $command */
     public function __construct(
-        private ServiceBus $bus,
-        private MessageCreator $messageCreator,
-        private string $command,
+        private readonly ServiceBus $bus,
+        private readonly MessageCreator $messageCreator,
+        public readonly string $command,
     ) {
     }
 
@@ -30,6 +30,8 @@ final class ExecuteCommand
 
     /**
      * Returns the name of the command to be handled
+     *
+     * @deprecated
      *
      * @return class-string
      */
