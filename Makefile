@@ -16,8 +16,7 @@ phpunit:
 
 .PHONY: infection
 infection:
-	@vendor/bin/phpunit --coverage-xml=build/coverage-xml --log-junit=build/junit.xml $(PHPUNIT_FLAGS)
-	@php -d zend.assertions=1 vendor/bin/infection -s --threads=$(PARALLELISM) $(INFECTION_FLAGS)
+	@XDEBUG_MODE=coverage php -d zend.assertions=1 vendor/bin/infection -s --threads=$(PARALLELISM) $(INFECTION_FLAGS)
 
 .PHONY: phpcbf
 phpcbf:
