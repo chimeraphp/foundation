@@ -27,16 +27,4 @@ final class ExecuteCommand
     {
         $this->bus->handle($this->messageCreator->create($this->command, $input));
     }
-
-    /**
-     * Returns the name of the command to be handled
-     *
-     * @deprecated
-     *
-     * @return class-string
-     */
-    public function getCommand(): string
-    {
-        return $this->command;
-    }
 }

@@ -35,19 +35,6 @@ final class ExecuteCommandTest extends TestCase
      * @test
      *
      * @covers ::__construct()
-     * @covers ::getCommand()
-     */
-    public function getCommandShouldReturnTheNameOfTheMessageToBeExecuted(): void
-    {
-        $action = new ExecuteCommand($this->bus, $this->messageCreator, SampleMessage::class);
-
-        self::assertSame(SampleMessage::class, $action->getCommand()); // @phpstan-ignore-line we'll remove this soon
-    }
-
-    /**
-     * @test
-     *
-     * @covers ::__construct()
      * @covers ::execute()
      */
     public function executeShouldCreateTheMessageAndHandleItWithTheBus(): void
