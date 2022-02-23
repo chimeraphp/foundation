@@ -20,7 +20,7 @@ infection:
 
 .PHONY: phpcbf
 phpcbf:
-	@vendor/bin/phpcbf --parallel=$(PARALLELISM)
+	@vendor/bin/phpcbf --parallel=$(PARALLELISM) || true
 
 .PHONY: phpcs
 phpcs:
