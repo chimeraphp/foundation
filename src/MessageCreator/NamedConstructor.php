@@ -9,13 +9,13 @@ use Chimera\MessageCreator;
 use function is_callable;
 
 /**
- * The most simple message creation strategy: named constructor in the message itself
+ * The simplest message creation strategy: named constructor in the message itself
  */
 final class NamedConstructor implements MessageCreator
 {
     private const DEFAULT_CONSTRUCTOR = 'fromInput';
 
-    public function __construct(private string $methodName = self::DEFAULT_CONSTRUCTOR)
+    public function __construct(private readonly string $methodName = self::DEFAULT_CONSTRUCTOR)
     {
     }
 

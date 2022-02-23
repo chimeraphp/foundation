@@ -7,8 +7,10 @@ use JsonSerializable;
 
 final class AmazingDto implements JsonSerializable
 {
-    private function __construct(public int $id, public string $name)
-    {
+    private function __construct(
+        public readonly int $id,
+        public readonly string $name,
+    ) {
     }
 
     public static function fromDomain(AmazingDomainObject $object): self

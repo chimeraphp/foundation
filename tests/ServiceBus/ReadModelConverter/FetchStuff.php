@@ -5,7 +5,7 @@ namespace Chimera\Tests\ServiceBus\ReadModelConverter;
 
 final class FetchStuff
 {
-    public function __construct(public int $id)
+    public function __construct(public readonly int $id)
     {
     }
 }

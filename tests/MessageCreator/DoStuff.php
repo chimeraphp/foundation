@@ -11,8 +11,10 @@ use function is_string;
 final class DoStuff
 {
     /** @param string[] $extra */
-    private function __construct(public Input $request, public array $extra)
-    {
+    private function __construct(
+        public readonly Input $request,
+        public readonly array $extra,
+    ) {
     }
 
     public static function fromInput(Input $input): self

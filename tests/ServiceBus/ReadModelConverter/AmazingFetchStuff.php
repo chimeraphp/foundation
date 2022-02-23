@@ -7,7 +7,7 @@ use Chimera\ServiceBus\ReadModelConverter\Query;
 
 final class AmazingFetchStuff implements Query
 {
-    public function __construct(public int $id)
+    public function __construct(public readonly int $id)
     {
     }
 

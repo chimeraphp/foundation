@@ -42,7 +42,7 @@ final class ExecuteCommandTest extends TestCase
     {
         $action = new ExecuteCommand($this->bus, $this->messageCreator, SampleMessage::class);
 
-        self::assertSame(SampleMessage::class, $action->getCommand());
+        self::assertSame(SampleMessage::class, $action->getCommand()); // @phpstan-ignore-line we'll remove this soon
     }
 
     /**
