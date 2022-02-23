@@ -15,14 +15,13 @@ use stdClass;
 /** @coversDefaultClass \Chimera\ExecuteQuery */
 final class ExecuteQueryTest extends TestCase
 {
-    /** @var ServiceBus&MockObject */
-    private ServiceBus $bus;
-
-    /** @var Input&MockObject */
-    private Input $input;
-
-    /** @var MessageCreator&MockObject */
-    private MessageCreator $messageCreator;
+    // phpcs:disable PSR12.Operators.OperatorSpacing.NoSpaceBefore -- PHPCS isn't ready for PHP 8.1 features yet
+    // phpcs:disable PSR12.Operators.OperatorSpacing.NoSpaceAfter
+    private ServiceBus&MockObject $bus;
+    private Input&MockObject $input;
+    private MessageCreator&MockObject $messageCreator;
+    // phpcs:enable PSR12.Operators.OperatorSpacing.NoSpaceBefore
+    // phpcs:enable PSR12.Operators.OperatorSpacing.NoSpaceAfter
 
     /** @before */
     public function createDependencies(): void
@@ -30,19 +29,6 @@ final class ExecuteQueryTest extends TestCase
         $this->bus            = $this->createMock(ServiceBus::class);
         $this->input          = $this->createMock(Input::class);
         $this->messageCreator = $this->createMock(MessageCreator::class);
-    }
-
-    /**
-     * @test
-     *
-     * @covers ::__construct()
-     * @covers ::getQuery()
-     */
-    public function getQueryShouldReturnTheNameOfTheMessageToBeExecuted(): void
-    {
-        $action = new ExecuteQuery($this->bus, $this->messageCreator, SampleMessage::class);
-
-        self::assertSame(SampleMessage::class, $action->getQuery()); // @phpstan-ignore-line we'll remove this soon
     }
 
     /**

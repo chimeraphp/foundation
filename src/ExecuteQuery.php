@@ -27,16 +27,4 @@ final class ExecuteQuery
     {
         return $this->bus->handle($this->messageCreator->create($this->query, $input));
     }
-
-    /**
-     * Returns the name of the query to be handled
-     *
-     * @deprecated
-     *
-     * @return class-string
-     */
-    public function getQuery(): string
-    {
-        return $this->query;
-    }
 }
