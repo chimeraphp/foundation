@@ -6,3 +6,4 @@
 /README.md      export-ignore
 /Makefile       export-ignore
 /composer.lock  export-ignore
+/renovate.json  export-ignore
