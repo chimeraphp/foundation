@@ -1,20 +1,17 @@
 <?php
 declare(strict_types=1);
 
-namespace Chimera\MessageCreator\Tests\Unit\InputExtractor;
+namespace Chimera\Tests\MessageCreator\InputExtractor;
 
 use Chimera\Input;
 use Chimera\MessageCreator\InputExtractor\UseInputData;
+use PHPUnit\Framework\Attributes as PHPUnit;
 use PHPUnit\Framework\TestCase;
 
-/** @coversDefaultClass \Chimera\MessageCreator\InputExtractor\UseInputData */
+#[PHPUnit\CoversClass(UseInputData::class)]
 final class UseInputDataTest extends TestCase
 {
-    /**
-     * @test
-     *
-     * @covers ::extractData
-     */
+    #[PHPUnit\Test]
     public function extractDataShouldReturnTheInputData(): void
     {
         $input = $this->createMock(Input::class);

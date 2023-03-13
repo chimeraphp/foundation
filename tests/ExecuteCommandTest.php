@@ -7,23 +7,20 @@ use Chimera\ExecuteCommand;
 use Chimera\Input;
 use Chimera\MessageCreator;
 use Chimera\ServiceBus;
+use PHPUnit\Framework\Attributes as PHPUnit;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use stdClass;
 
-/** @coversDefaultClass \Chimera\ExecuteCommand */
+#[PHPUnit\CoversClass(ExecuteCommand::class)]
 final class ExecuteCommandTest extends TestCase
 {
-    // phpcs:disable PSR12.Operators.OperatorSpacing.NoSpaceBefore -- PHPCS isn't ready for PHP 8.1 features yet
-    // phpcs:disable PSR12.Operators.OperatorSpacing.NoSpaceAfter
     private ServiceBus&MockObject $bus;
     private Input&MockObject $input;
     private MessageCreator&MockObject $messageCreator;
-    // phpcs:enable PSR12.Operators.OperatorSpacing.NoSpaceBefore
-    // phpcs:enable PSR12.Operators.OperatorSpacing.NoSpaceAfter
 
-    /** @before */
+    #[PHPUnit\Before]
     public function createDependencies(): void
     {
         $this->bus            = $this->createMock(ServiceBus::class);
@@ -31,12 +28,7 @@ final class ExecuteCommandTest extends TestCase
         $this->messageCreator = $this->createMock(MessageCreator::class);
     }
 
-    /**
-     * @test
-     *
-     * @covers ::__construct()
-     * @covers ::execute()
-     */
+    #[PHPUnit\Test]
     public function executeShouldCreateTheMessageAndHandleItWithTheBus(): void
     {
         $command = new stdClass();
@@ -53,12 +45,7 @@ final class ExecuteCommandTest extends TestCase
         $this->executeAction();
     }
 
-    /**
-     * @test
-     *
-     * @covers ::__construct()
-     * @covers ::execute()
-     */
+    #[PHPUnit\Test]
     public function executeShouldNotCatchExceptionsFromBus(): void
     {
         $command   = new stdClass();
@@ -78,12 +65,7 @@ final class ExecuteCommandTest extends TestCase
         $this->executeAction();
     }
 
-    /**
-     * @test
-     *
-     * @covers ::__construct()
-     * @covers ::execute()
-     */
+    #[PHPUnit\Test]
     public function executeShouldNotCatchExceptionsFromMessageCreator(): void
     {
         $exception = new RuntimeException('Message creation failed');

@@ -3,18 +3,16 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
     colors="true"
-    verbose="true"
     beStrictAboutOutputDuringTests="true"
-    beStrictAboutTodoAnnotatedTests="true"
     beStrictAboutChangesToGlobalState="true"
-    beStrictAboutCoversAnnotation="true"
-    beStrictAboutResourceUsageDuringSmallTests="true"
-    forceCoversAnnotation="true"
     failOnRisky="true"
     failOnWarning="true"
     executionOrder="random"
+    cacheDirectory=".phpunit.cache"
+    requireCoverageMetadata="true"
+    beStrictAboutCoverageMetadata="true"
 >
-    <coverage processUncoveredFiles="true">
+    <coverage>
         <include>
             <directory>src</directory>
         </include>

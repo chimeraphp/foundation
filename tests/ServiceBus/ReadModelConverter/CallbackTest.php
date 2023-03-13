@@ -4,20 +4,18 @@ declare(strict_types=1);
 namespace Chimera\Tests\ServiceBus\ReadModelConverter;
 
 use Chimera\ServiceBus\ReadModelConverter\Callback;
+use PHPUnit\Framework\Attributes as PHPUnit;
 use PHPUnit\Framework\TestCase;
 
 use function assert;
 
-/**
- * @covers \Chimera\ServiceBus\ReadModelConverter\Callback
- *
- * @uses \Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDomainObject
- * @uses \Chimera\Tests\ServiceBus\ReadModelConverter\AmazingDto
- * @uses \Chimera\Tests\ServiceBus\ReadModelConverter\AmazingFetchStuff
- */
+#[PHPUnit\CoversClass(Callback::class)]
+#[PHPUnit\UsesClass(AmazingDomainObject::class)]
+#[PHPUnit\UsesClass(AmazingDto::class)]
+#[PHPUnit\UsesClass(AmazingFetchStuff::class)]
 final class CallbackTest extends TestCase
 {
-    /** @test */
+    #[PHPUnit\Test]
     public function convertShouldNotChangeResultIfMessageIsNotAQuery(): void
     {
         $converter = new Callback();
@@ -29,7 +27,7 @@ final class CallbackTest extends TestCase
         self::assertSame($domainObj, $result);
     }
 
-    /** @test */
+    #[PHPUnit\Test]
     public function convertShouldUseTheQueryCallbackToCreateASingleReadModel(): void
     {
         $converter = new Callback();
@@ -42,7 +40,7 @@ final class CallbackTest extends TestCase
         self::assertSame($domainObj->name(), $result->name);
     }
 
-    /** @test */
+    #[PHPUnit\Test]
     public function convertShouldUseTheQueryCallbackToCreateMultipleReadModels(): void
     {
         $converter = new Callback();
