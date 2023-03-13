@@ -1,27 +1,20 @@
 <?php
 declare(strict_types=1);
 
-namespace Chimera\MessageCreator\Tests\Unit\InputExtractor;
+namespace Chimera\Tests\MessageCreator\InputExtractor;
 
 use Chimera\Input;
 use Chimera\MessageCreator\InputExtractor\AppendGeneratedIdentifier;
 use Chimera\MessageCreator\InputExtractor\UseInputData;
+use PHPUnit\Framework\Attributes as PHPUnit;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 
-/**
- * @coversDefaultClass \Chimera\MessageCreator\InputExtractor\AppendGeneratedIdentifier
- *
- * @uses \Chimera\MessageCreator\InputExtractor\UseInputData
- */
+#[PHPUnit\CoversClass(AppendGeneratedIdentifier::class)]
+#[PHPUnit\UsesClass(UseInputData::class)]
 final class AppendGeneratedIdentifierTest extends TestCase
 {
-    /**
-     * @test
-     *
-     * @covers ::__construct
-     * @covers ::extractData
-     */
+    #[PHPUnit\Test]
     public function extractDataShouldAddTheIdentifierAttributeWhenItExists(): void
     {
         $id = Uuid::uuid4();
@@ -35,12 +28,7 @@ final class AppendGeneratedIdentifierTest extends TestCase
         self::assertSame(['id' => $id, 'testing' => 1], $extractor->extractData($input));
     }
 
-    /**
-     * @test
-     *
-     * @covers ::__construct
-     * @covers ::extractData
-     */
+    #[PHPUnit\Test]
     public function extractDataShouldOverrideInputData(): void
     {
         $id = Uuid::uuid4();
@@ -54,12 +42,7 @@ final class AppendGeneratedIdentifierTest extends TestCase
         self::assertSame(['id' => $id, 'testing' => 1], $extractor->extractData($input));
     }
 
-    /**
-     * @test
-     *
-     * @covers ::__construct
-     * @covers ::extractData
-     */
+    #[PHPUnit\Test]
     public function extractDataShouldReturnTheInputDataWhenIdentifierAttributeDoesNotExist(): void
     {
         $input = $this->createMock(Input::class);

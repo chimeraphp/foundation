@@ -7,23 +7,20 @@ use Chimera\ExecuteQuery;
 use Chimera\Input;
 use Chimera\MessageCreator;
 use Chimera\ServiceBus;
+use PHPUnit\Framework\Attributes as PHPUnit;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use stdClass;
 
-/** @coversDefaultClass \Chimera\ExecuteQuery */
+#[PHPUnit\CoversClass(ExecuteQuery::class)]
 final class ExecuteQueryTest extends TestCase
 {
-    // phpcs:disable PSR12.Operators.OperatorSpacing.NoSpaceBefore -- PHPCS isn't ready for PHP 8.1 features yet
-    // phpcs:disable PSR12.Operators.OperatorSpacing.NoSpaceAfter
     private ServiceBus&MockObject $bus;
     private Input&MockObject $input;
     private MessageCreator&MockObject $messageCreator;
-    // phpcs:enable PSR12.Operators.OperatorSpacing.NoSpaceBefore
-    // phpcs:enable PSR12.Operators.OperatorSpacing.NoSpaceAfter
 
-    /** @before */
+    #[PHPUnit\Before]
     public function createDependencies(): void
     {
         $this->bus            = $this->createMock(ServiceBus::class);
@@ -31,12 +28,7 @@ final class ExecuteQueryTest extends TestCase
         $this->messageCreator = $this->createMock(MessageCreator::class);
     }
 
-    /**
-     * @test
-     *
-     * @covers ::__construct()
-     * @covers ::fetch()
-     */
+    #[PHPUnit\Test]
     public function fetchShouldCreateTheMessageAndHandleItWithTheBus(): void
     {
         $query = new stdClass();
@@ -54,12 +46,7 @@ final class ExecuteQueryTest extends TestCase
         self::assertSame('testing OK', $this->executeAction());
     }
 
-    /**
-     * @test
-     *
-     * @covers ::__construct()
-     * @covers ::fetch()
-     */
+    #[PHPUnit\Test]
     public function fetchShouldNotCatchExceptionsFromBus(): void
     {
         $command   = new stdClass();
@@ -79,12 +66,7 @@ final class ExecuteQueryTest extends TestCase
         $this->executeAction();
     }
 
-    /**
-     * @test
-     *
-     * @covers ::__construct()
-     * @covers ::fetch()
-     */
+    #[PHPUnit\Test]
     public function fetchShouldNotCatchExceptionsFromMessageCreator(): void
     {
         $exception = new RuntimeException('Message creation failed');
